@@ -1,0 +1,43 @@
+<h1>
+    Tone analyzer</h1>
+<textarea class="form-control" rows="3" ng-model="tac.msg" placeholder="Enter your text here"></textarea>
+<br>
+<button class="btn btn-primary" ng-click="tac.analyze()">
+    Analyze
+</button>
+<button class="btn btn-danger" ng-click="tac.msg=''">
+    Clear 
+</button>
+<br>
+<br>
+<div ng-if="tac.errors" class="alert alert-danger">
+    <pre>
+        {{tac.errors}}
+    </pre>
+</div>
+<br>
+
+<h3>Result</h3>
+<h4>Analyzing text</h4>
+<pre> 
+    {{tac.text}}
+</pre>
+<div class="container=fluid">
+    <div class="col-sm-4" ng-repeat="tone in tac.tones">
+       <h4> {{tone.category_name}}</h4>
+     
+        <div class="row" ng-repeat="item in tone.tones">
+            
+                <div class="col-sm-5">
+                   <strong>{{item.tone_name}}</strong>
+                </div>
+                <div class="col-sm-7">
+                    <uib-progressbar value="item.score*100" max="100"></uib-progressbar>
+                </div>
+          
+
+        </div>
+    </div>
+</div>
+
+</div>
