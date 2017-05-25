@@ -1,2 +1,23 @@
-Conversation 
-{{sc.helloWorld}}
+<h3>Conversation</h3>
+
+<div class="container-fluid">
+    <div class="chat-box">
+        <div class="conversation" ng-repeat="item in sc.conversation">
+            <div class="chat-item" ng-class="{'watson':item.entity == 'watson','user':item.entity == 'user'}">
+                <img class="avatar" ng-if="item.entity == 'watson'" ng-src="{{item.avatar}}">
+                <div class="chat-text">
+                    {{item.text}}
+                </div>
+                <img class="avatar" ng-if="item.entity == 'user'" ng-src="{{item.avatar}}">
+            </div>
+        </div>
+    </div>
+    <form name="form" ng-submit="sc.submit($event)" style="display: inline-block">
+        <div class="input-group">
+            <input type="text" required class="form-control" placeholder="" ng-model="sc.msg">
+            <span class="input-group-btn">
+        <button ng-disabled="sc.submitting || sc.msg== undefined || sc.msg== ''" class="btn btn-primary" type="submit">Send!</button>
+    </span>
+        </div>
+    </form>
+</div>

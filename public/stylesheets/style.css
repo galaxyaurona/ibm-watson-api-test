@@ -1,8 +1,58 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100vh;
+  font: 14px  'Poppins', "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.watson {
+  float:left
+}
+
+.chat-item {
+  max-width: 75%;
+  min-height: 30px;
+  vertical-align: middle;
+  margin: 0.75rem 0.5rem;
+  display: flex
+}
+.watson > .chat-text{
+  border: 3px solid #F2DDDE;
+  height: 100%;
+}
+.avatar {
+  height: 40px;
+  width:40px;
+}
+.watson > .avatar {
+  float:left;
+}
+.user > .avatar {
+  float:right;
+}
+.user > .chat-text{
+  border: 3px solid #89ABE3;
+  height: 100%;
+}
+.chat-text {
+  padding:7px 14px;
+  border-radius: 15px;
+  line-height: 20px;
+}
+.user {
+
+
+  float:right;
+}
+.chat-box {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: column;
+   flex-direction: column;
+   background: white;
+   height: 70vh;
+   border:2px solid #607D8B;
+   border-radius: 15px;
 }
